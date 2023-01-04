@@ -1,0 +1,28 @@
+﻿@using WebApplication.TelefonRehberi.Models.Concrete
+@model List<Rehber>
+
+<table class="table text-center table-dark table-hover">
+    <thead>
+        <tr>
+            <th class="col">Id</th>
+            <th class="col">Ad</th>
+            <th class="col">Soyad</th>
+            <th class="col">Telefon</th>
+            <th class="col">Güncelle</th>
+            <th class="col">Sil</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr class="text-center">
+                <td>@item.Id</td>
+                <td>@item.Ad</td>
+                <td>@item.Soyad</td>
+                <td>@item.Telefon</td>
+                <td><a href="/Home/Guncelle/@item.Id" class="btn btn-outline-warning">Güncelle</a></td>
+                <td><a href="/Home/Sil/@item.Id" class="btn btn-outline-danger">Sil</a></td>
+            </tr>
+        }
+    </tbody>
+</table>

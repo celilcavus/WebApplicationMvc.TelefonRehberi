@@ -1,0 +1,43 @@
+﻿@using WebApplication.TelefonRehberi.Models.Concrete;
+@model Rehber
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <title>Telefon Rehberi</title>
+</head>
+<body>
+    @using (Html.BeginForm("Index", "Home", FormMethod.Post))
+    {
+        <div class="container mt-5">
+            @*@Html.Label("Id")
+        @Html.TextBoxFor(x => x.Id, new { @class = "form-control readonly" })
+        <br />*@
+            @Html.Label("Ad")
+            @Html.ValidationMessageFor(x => x.Ad)
+            @Html.TextBoxFor(x => x.Ad, new { @class = "form-control" })
+            <br />
+            @Html.Label("Soyad")
+            @Html.ValidationMessageFor(x => x.Soyad)
+            @Html.TextBoxFor(x => x.Soyad, new { @class = "form-control" })
+            <br />
+            @Html.Label("Telefon")
+            @Html.ValidationMessageFor(x => x.Telefon)
+            @Html.TextBoxFor(x => x.Telefon, new { @class = "form-control" })
+            <br />
+            <button type="submit" class="btn btn-outline-dark">Kaydet</button>
+
+
+        </div>
+    }
+    <div class="container">
+        <br />
+        <br />
+        @Html.Action("getRehberList")
+    </div>
+</body>
+</html>
